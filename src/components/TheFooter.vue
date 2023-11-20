@@ -6,7 +6,7 @@
           <span class="">© 2023 Внешнеторговая палата Казахстана. Все права защищены.</span>
         </div>
         <div class="grow-0 shrink-0">
-          <a class="flex item-center gap-2 text-[14px]" href="#">
+          <a class="flex item-center gap-2 text-[14px]" href="mailto:info.icc.kz@gmail.com">
             <img alt="" class="w-[18px]" src="/src/assets/images/mail.png">
             info.icc.kz@gmail.com
           </a>
