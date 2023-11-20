@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    @apply tracking-wide text-sm;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.container {
+    @apply px-5 mx-auto md:max-w-[970px] xl:max-w-[1245px] 2xl:max-w-[1300px];
+}
+
