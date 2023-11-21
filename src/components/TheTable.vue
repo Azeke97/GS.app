@@ -131,9 +131,46 @@
         </div>
       </div>
     </div>
+    <div v-if="loading" class="flex justify-center mt-20">
+      <the-spinner/>
+    </div>
 
-    <div class="flex justify-end">
-      <ThePagination/>
+    <div v-if="companies.length > perPage" class="flex justify-end example-five">
+      <vue-awesome-paginate v-model="page"
+                            :items-per-page="perPage"
+                            :max-pages-shown="5"
+                            :on-click="onChangePage"
+                            :total-items="companies.length">
+        <template #prev-button>
+        <span class="flex items-center justify-around">
+          <svg
+              fill="black"
+              height="8"
+              viewBox="0 0 24 24"
+              width="8"
+              xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/>
+          </svg>
+          Prev
+        </span>
+        </template>
+
+        <template #next-button>
+        <span class="flex items-center justify-around">
+          Next
+          <svg
+              fill="black"
+              height="8"
+              viewBox="0 0 24 24"
+              width="8"
+              xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M8.122 24l-4.122-4 8-8-8-8 4.122-4 11.878 12z"/>
+          </svg>
+        </span>
+        </template>
+      </vue-awesome-paginate>
     </div>
 
   </div>
@@ -141,21 +178,25 @@
 </template>
 
 <script>
-import ThePagination from '@/components/ThePagination.vue'
 import axios from 'axios'
+import { VueAwesomePaginate } from 'vue-awesome-paginate'
+import TheSpinner from '@/components/Spinner.vue'
 
 export default {
-  components: { ThePagination },
+  components: { TheSpinner, VueAwesomePaginate },
 
   data () {
     return {
       input: '',
       companies: [],
+      page: 1,
+      perPage: 10,
       country: '',
       searchString: '',
       target: '',
       searchCountry: '',
-      interval: null
+      interval: null,
+      loading: false
     }
   },
 
@@ -184,33 +225,47 @@ export default {
         }
 
         return isSearchString && isCountry && isTarget
-      })
+      }).splice((this.page - 1) * this.perPage, this.perPage)
     }
-
   },
 
   methods: {
     gsAPICall: function () {
+      this.loading = true
       axios
         .get('https://script.google.com/macros/s/AKfycbwGMdmSld1v93XyyTZrElCfUluLPKnj6VP8TjYQE2aQAh7jKpydoQwKCmgmXdDl9hfw/exec')
         .then(response => {
           this.companies = response.data.data
           console.log(response.data.data)
         })
-        .catch()
+        .catch(error => console.log(error))
+        .finally(() => {
+          this.loading = false
+        })
     },
 
     intervalFetchData: function () {
       setInterval(() => {
         this.gsAPICall()
       }, 60 * 60 * 1000)
+    },
+    onChangePage (page) {
+      this.page = page
     }
     // sorting: function () {
     //   this.companies.sort((a, b) => (a.companies > b.companies ? 1 : -1))
     // }
+  },
+  watch: {
+    searchString (v) {
+      this.page = 1
+    },
+    searchCountry (v) {
+      this.page = 1
+    },
+    target (v) {
+      this.page = 1
+    }
   }
 }
 </script>
-
-<style>
-</style>

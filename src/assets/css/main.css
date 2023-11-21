@@ -12,3 +12,50 @@
     @apply px-5 mx-auto md:max-w-[970px] xl:max-w-[1245px] 2xl:max-w-[1300px];
 }
 
+.example-five .pagination-container {
+    border-radius: 5px;
+    padding: 10px 0;
+}
+
+.example-five .paginate-buttons {
+    width: 40px;
+    height: 40px;
+    margin-inline: 5px;
+    cursor: pointer;
+    background-color: #F9FAFB;
+    border-radius: 4px;
+    border: 1px solid #e5e5e5;
+}
+
+.example-five .back-button {
+    width: 70px;
+}
+
+.example-five .next-button {
+    width: 70px;
+}
+
+.example-five .back-button svg {
+    transform: rotate(180deg);
+}
+
+.example-five .active-page {
+    background-color: #3B82F6;
+    color: #fff;
+}
+
+.example-five .paginate-buttons:hover {
+    background-color: #e5e5e5;
+
+}
+
+.example-five .active-page:hover {
+    transition: all ease-in-out 0.2s;
+    background-color: #355CF6;
+    color: #fff;
+}
+
+.example-five .back-button:active,
+.example-five .next-button:active {
+    background-color: #dedede;
+}
