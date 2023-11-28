@@ -1,12 +1,12 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <div class="flex justify-between items-center gap-10">
-        <div class="grow-0 shrink-0 max-w-[300px]">
-          <span class="">© 2023 Внешнеторговая палата Казахстана. Все права защищены.</span>
+      <div class="flex justify-between items-center gap-4 sm:gap-10 sm:flex-row flex-col">
+        <div class="grow-0 shrink-0 max-w-[300px] sm:text-left text-center">
+          <span class="">{{ $t("footer.label") }}</span>
         </div>
         <div class="grow-0 shrink-0">
-          <a class="flex item-center gap-2 text-[14px]" href="mailto:info.icc.kz@gmail.com">
+          <a class="flex item-center gap-2 sm:text-[14px] text-[12px]" href="mailto:info.icc.kz@gmail.com">
             <img alt="" class="w-[18px]" src="/src/assets/images/mail.png">
             info.icc.kz@gmail.com
           </a>

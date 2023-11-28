@@ -1,21 +1,27 @@
 <template>
   <header class="header">
     <div class="container">
-      <div class="flex justify-start items-center flex gap-5 py-1">
-        <div class="grow-0 shrink-0">
-          <img alt="" class="w-[80px] sm:w-[140px]" src="/src/assets/images/header-logo.png">
+      <div class="flex justify-between items-center">
+        <div class="flex justify-start items-center flex gap-5 py-1">
+          <div class="grow-0 shrink-0">
+            <img alt="" class="w-[80px] sm:w-[140px]" src="/src/assets/images/header-logo.png">
+          </div>
+          <div class="grow-0 shrink-0">
+            <img alt="" class="w-[60px] sm:w-[100px]" src="/src/assets/images/logo-footer.png">
+          </div>
         </div>
-        <div class="grow-0 shrink-0">
-          <img alt="" class="w-[60px] sm:w-[100px]" src="/src/assets/images/logo-footer.png">
-        </div>
+        <language-switcher/>
       </div>
     </div>
   </header>
 </template>
 
 <script>
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
+
 export default {
-  name: 'TheHeader'
+  name: 'TheHeader',
+  components: { LanguageSwitcher }
 }
 </script>
 
