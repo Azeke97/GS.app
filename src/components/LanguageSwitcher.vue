@@ -1,18 +1,19 @@
 <template>
   <select id="frm-whatever"
-          @change="switchLanguage"
-          class="peer border-gray-300 border h-10 rounded-md bg-gray-50 px-4 font-700 outline-none drop-shadow-sm transition-all duration-200 ease-in-out"
-          name="whatever">
-    <option class="py-4 px-2" v-for="sLocale in supportedLocales"
-            :key="`locale-${sLocale}`"
+          class="peer border-gray-300 border sm:h-10 h-8 rounded-md bg-gray-50 px-4 font-700 outline-none drop-shadow-sm transition-all duration-200 ease-in-out"
+          name="whatever"
+          @change="switchLanguage">
+    <option v-for="sLocale in supportedLocales" :key="`locale-${sLocale}`"
+            :selected="locale === sLocale"
             :value="sLocale"
-            :selected="locale === sLocale">{{ t(`locale.${sLocale}`) }}
+            class="py-4 px-2">{{ t(`locale.${sLocale}`) }}
     </option>
   </select>
 </template>
 <script>
 import { useI18n } from 'vue-i18n'
 import Tr from '@/i18n/translation'
+
 export default {
   name: 'LanguageSwitcher',
   setup () {

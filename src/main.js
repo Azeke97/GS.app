@@ -1,3 +1,5 @@
+// A.Asimbayev
+// asimbayevaziz@gmail.com
 import './assets/css/main.css'
 
 import { createApp } from 'vue'

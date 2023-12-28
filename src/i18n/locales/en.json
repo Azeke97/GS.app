@@ -1,43 +1,47 @@
 {
   "locale": {
-    "ru": "Ru",
-    "en": "En",
-    "ch": "Ch"
+    "ru": "Русский",
+    "en": "English",
+    "ch": "中文"
   },
   "nav": {
-    "title": "Пул иностранных предприятий",
-    "desc": "Сведения об иностранных компаний",
-    "button": "Добавить клиента",
+    "title": "Pool of foreign enterprises",
+    "desc": "Information about foreign companies",
+    "button": "Add client",
     "filters": {
       "label": [
-        "Вид деятельности компании",
-        "Страна"
+        "Type of the company's activity",
+        "Country"
       ],
-      "placeholder": "Введите текст"
+      "placeholder": "Type text"
     },
     "select": {
-      "label": "Цель интереса в Казахстане",
+      "label": "Purpose of interest in Kazakhstan",
       "options": [
-        "Выберите из списка",
-        "Заключение инвестиционного контракта",
-        "Продажа продукции",
-        "Услуги EPC"
+        "Select from the list",
+        "Signing an investment contract",
+        "Sales of products",
+        "EPC services"
       ]
     }
   },
   "table": {
     "title": [
-      "Наименование компании",
-      "Вид деятельности компании",
-      "Страна",
-      "Цель интереса в Казахстан",
-      "Дополнительные детали целей",
-      "Документ",
-      "Заполняющая компания",
-      "Исполнитель и контакты заполняющего"
-    ]
+      "Company name",
+      "Type of the company's activity",
+      "Country",
+      "Purpose of interest in Kazakhstan",
+      "Additional details of the targets",
+      "Document",
+      "Company filling in the questionnaire",
+      "Executor and contacts of the filler"
+    ],
+    "download": "Download"
   },
   "footer": {
-    "label": "© 2023 Внешнеторговая палата Казахстана. Все права защищены."
+    "label": [
+      "© 2023 Chamber of International Commerce of Kazakhstan.",
+      "All rights reserved."
+    ]
   }
 }

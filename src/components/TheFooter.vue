@@ -2,8 +2,9 @@
   <footer class="footer">
     <div class="container">
       <div class="flex justify-between items-center gap-4 sm:gap-10 sm:flex-row flex-col">
-        <div class="grow-0 shrink-0 max-w-[300px] sm:text-left text-center">
-          <span class="">{{ $t("footer.label") }}</span>
+        <div class="grow-0 shrink-0 sm:text-left text-center">
+          <p class="">{{ $t("footer.label.0") }}</p>
+          <p class="">{{ $t("footer.label.1") }}</p>
         </div>
         <div class="grow-0 shrink-0">
           <a class="flex item-center gap-2 sm:text-[14px] text-[12px]" href="mailto:info.icc.kz@gmail.com">

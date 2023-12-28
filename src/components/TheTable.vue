@@ -30,8 +30,8 @@
                 class="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-500"
                 for="4">{{ $t("nav.filters.label.0") }}</label>
             <input v-model="searchString"
-                   class="peer border-gray-300 border h-10 w-full rounded-md bg-gray-50 px-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out"
                    :placeholder="$t('nav.filters.placeholder')"
+                   class="peer border-gray-300 border h-10 w-full rounded-md bg-gray-50 px-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out"
                    type="text"/>
 
           </div>
@@ -54,8 +54,8 @@
                 class="block w-full pb-1 text-sm font-medium text-gray-500 transition-all duration-200 ease-in-out group-focus-within:text-blue-500"
                 for="4">{{ $t("nav.filters.label.1") }}</label>
             <input v-model="searchCountry"
-                   class="peer border-gray-300 border h-10 w-full rounded-md bg-gray-50 px-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out"
                    :placeholder="$t('nav.filters.placeholder')"
+                   class="peer border-gray-300 border h-10 w-full rounded-md bg-gray-50 px-4 font-thin outline-none drop-shadow-sm transition-all duration-200 ease-in-out"
                    type="text"/>
           </div>
 
@@ -71,21 +71,29 @@
                     <th class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6" scope="col">
                       №
                     </th>
-                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" scope="col">{{ $t("table.title.0") }}
+                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" scope="col">
+                      {{ $t("table.title.0") }}
                     </th>
-                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" scope="col">{{ $t("table.title.1") }}
+                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" scope="col">
+                      {{ $t("table.title.1") }}
                     </th>
-                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" scope="col">{{ $t("table.title.2") }}
+                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" scope="col">
+                      {{ $t("table.title.2") }}
                     </th>
-                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" scope="col">{{ $t("table.title.3") }}
+                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" scope="col">
+                      {{ $t("table.title.3") }}
                     </th>
-                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" scope="col">{{ $t("table.title.4") }}
+                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" scope="col">
+                      {{ $t("table.title.4") }}
                     </th>
-                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" scope="col">{{ $t("table.title.5") }}
+                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" scope="col">
+                      {{ $t("table.title.5") }}
                     </th>
-                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" scope="col">{{ $t("table.title.6") }}
+                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" scope="col">
+                      {{ $t("table.title.6") }}
                     </th>
-                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" scope="col">{{ $t("table.title.7") }}
+                    <th class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900" scope="col">
+                      {{ $t("table.title.7") }}
                     </th>
 
                     <th class="relative py-3.5 pl-3 pr-4 sm:pr-6" scope="col">
@@ -111,8 +119,9 @@
                     <td class="whitespace-normal px-3 py-4 text-sm text-gray-500">{{ companies.target }}</td>
                     <td class="whitespace-normal px-3 py-4 text-sm text-gray-500">{{ companies.more }}</td>
                     <td class="whitespace-normal py-4 pl-3 pr-4 text-risht text-sm font-medium sm:pr-6">
-                      <a v-if="companies.docs" :href="companies.docs" class="text-indigo-600 hover:text-indigo-900" target="_blank">
-                        Скачать
+                      <a v-if="companies.docs" :href="companies.docs" class="text-indigo-600 hover:text-indigo-900"
+                         target="_blank">
+                        {{ $t("table.download") }}
                       </a>
                     </td>
 
@@ -249,17 +258,21 @@ export default {
         this.gsAPICall()
       }, 60 * 60 * 1000)
     },
+
     onChangePage (page) {
       this.page = page
     }
   },
+
   watch: {
     searchString (v) {
       this.page = 1
     },
+
     searchCountry (v) {
       this.page = 1
     },
+
     target (v) {
       this.page = 1
     }
